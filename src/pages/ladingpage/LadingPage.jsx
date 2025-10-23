@@ -16,7 +16,7 @@ const LadingPage = () => {
 
     return (
         <>
-            <nav className="bg-[#FDFEFF] text-gray-500 px-8 py-4 shadow-md">
+            <nav className="bg-[#FDFEFF] text-gray-500 px-8 py-4 shadow-md fixed w-full">
                 <div className="flex justify-between items-center">
                     <SolvixLogo />
 
@@ -58,6 +58,10 @@ const LadingPage = () => {
                     )
                 }
             </nav>
+
+            <section className="bg-(--bg-principal) h-screen">
+
+            </section>
         </>
     )
 }
