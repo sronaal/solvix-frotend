@@ -1,10 +1,15 @@
+import AuthLayout from './layout/AuthLayout'
+import { BrowserRouter } from 'react-router-dom'
 import './App.css'
+import AppRoutes from './routes/AppRoutes'
 
 function App() {
 
   return (
     <>
-      <h1 className='bg-(--color-primary)'>Hola Mundo</h1>
+      <BrowserRouter>
+        <AppRoutes/>
+      </BrowserRouter>
     </>
   )
 }
