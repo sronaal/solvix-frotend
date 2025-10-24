@@ -98,7 +98,7 @@ const LandingPage = () => {
 
             {/* HERO SECTION */}
             <section className="bg-(--bg-principal) h-[80%] flex  flex-col lg:flex-row items-center  py-30 px-8">
-                <div className="h-82 w-fit flex flex-col items-start gap-5">
+                <div className="h-82 w-fit flex flex-col items-start gap-5 ml-2">
                     <span className="bg-(--color-primary-3) text-(--color-primary-2) p-2 rounded-md w-fit mb-4">Sistema de Tickets para IT</span>
                     <h2 className="text-sm lg:text-xl md:text-xl mb-4">Gestiona el soporte técnico de tu empresa de manera eficiente</h2>
                     <p className="text-sm md:text-xl font- text-(--color-text-2) mb-5">Solvix centraliza todas las incidencias, automatiza el flujo de trabajo y mejora la satisfacción de tus usuarios con una plataforma intuitiva y poderosa.</p>
