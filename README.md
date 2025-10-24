@@ -1,16 +1,68 @@
-# React + Vite
+# 💼 Solvix – Sistema de Tickets para IT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Sistema web integral para la **gestión del soporte técnico (IT)** dentro de una organización.  
+> Permite **registrar, asignar, dar seguimiento y cerrar tickets de incidencias** de manera centralizada, mejorando la comunicación entre usuarios, técnicos y administradores.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📘 Descripción general
 
-## React Compiler
+**Solvix** es una plataforma desarrollada bajo arquitectura **cliente-servidor**, que optimiza el proceso de atención de solicitudes técnicas en empresas o instituciones.  
+El sistema permite controlar el flujo completo de un ticket —desde su creación hasta su resolución— garantizando trazabilidad, eficiencia y transparencia.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Desarrollado como proyecto formativo del **SENA – Tecnólogo en Análisis y Desarrollo de Software**, Solvix combina **buenas prácticas de ingeniería de software**, diseño UI/UX moderno y tecnologías web actuales.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Tecnologías principales
+
+| Capa | Tecnología | Descripción |
+|------|-------------|-------------|
+| **Frontend** | ⚛️ React.js + TailwindCSS | Interfaz moderna, dinámica y responsive. |
+| **Backend** | 🐍 FastAPI (Python) | API REST de alto rendimiento y escalabilidad. |
+| **Base de datos** | 🗄️ MySQL | Sistema de gestión relacional para almacenamiento persistente. |
+| **Autenticación** | 🔒 JWT + Bcrypt | Seguridad y control de roles. |
+| **Gráficos** | 📊 Chart.js  | Visualización de métricas y reportes. |
+
+---
+
+## 🧩 Módulos principales
+
+### 🔐 Autenticación y roles
+- Inicio de sesión con credenciales cifradas.
+- Asignación de roles (Administrador, Técnico, Usuario final).  
+- Protección de rutas mediante JWT.
+
+### 🧾 Gestión de tickets
+- Creación, asignación, seguimiento y cierre de solicitudes.  
+- Control de prioridad, categoría y estado.  
+- Registro de tiempos de atención y resolución.
+
+### 🧰 Panel del técnico
+- Visualización de tickets asignados.  
+- Actualización de estado y comentarios.  
+- Adjuntos de evidencia de soporte.
+
+### 🧑‍💼 Panel del administrador
+- Gestión de usuarios, categorías y prioridades.  
+- Reportes estadísticos de rendimiento.  
+- Control global del sistema.
+
+### 📊 Reportes y estadísticas
+- Visualización de indicadores de desempeño.  
+- Exportación de reportes a **CSV o PDF**.  
+- Gráficos dinámicos por estado, categoría o técnico.
+
+### 📨 Notificaciones
+- Alertas automáticas sobre cambios de estado.  
+- Recordatorios de tickets pendientes.
+
+---
+
+## ⚙️ Requisitos previos
+
+Asegúrate de tener instalado:
+- [Node.js](https://nodejs.org/) v18+
+- [Python](https://www.python.org/) v3.10+  
+- [MySQL](https://www.mysql.com/) v8+  
+- [Git](https://git-scm.com/)  
