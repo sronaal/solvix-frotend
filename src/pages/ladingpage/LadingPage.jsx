@@ -101,7 +101,7 @@ const LandingPage = () => {
                 <div className="h-82 w-fit flex flex-col items-start gap-5 ml-2">
                     <span className="bg-(--color-primary-3) text-(--color-primary-2) p-2 rounded-md w-fit mb-4">Sistema de Tickets para IT</span>
                     <h2 className="text-sm lg:text-xl md:text-xl mb-4">Gestiona el soporte técnico de tu empresa de manera eficiente</h2>
-                    <p className="text-sm md:text-xl font- text-(--color-text-2) mb-5">Solvix centraliza todas las incidencias, automatiza el flujo de trabajo y mejora la satisfacción de tus usuarios con una plataforma intuitiva y poderosa.</p>
+                    <p className="text-sm md:text-xl  text-(--color-text-2) mb-5">Solvix centraliza todas las incidencias, automatiza el flujo de trabajo y mejora la satisfacción de tus usuarios con una plataforma intuitiva y poderosa.</p>
                     <div className="flex items-center gap-5">
                         <Link to='/auth' className="bg-(--color-primary) text-white px-4 py-2 rounded-md transition-colors flex items-center gap-2">
                             <svg
@@ -125,12 +125,12 @@ const LandingPage = () => {
 
             </section>
 
-            <section className="flex flex-col items-center gap-4 bg-(--bg-secundario) min-h-screen text-center p-20">
+            <section className="flex flex-col items-center gap-4 bg-(--bg-secundario) min-h-screen text-center p-10 md:p-15">
                 <span className="bg-(--color-primary-3) px-2 py-1 rounded-md text-(--color-primary) w-fit mb-5">Caracteristicas</span>
-                <h2 className="text-md lg:text-xl  text-(--color-text) w-full border ">Todo lo que necesitas para gestionar soporte IT</h2>
+                <h2 className="text-md lg:text-xl  text-(--color-text) w-full">Todo lo que necesitas para gestionar soporte IT</h2>
                 <p className="text-xl lg:text-2xl  w-90 md:w-9/12 lg:w-8/12  text-(--color-text-2)">Una plataforma completa diseñada para optimizar cada aspecto de tu departamento de soporte</p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 w-full">
                     <div className="flex flex-col gap-6 items-start border border-gray-300 p-8 w-full rounded-2xl shadow-xl bg-white">
                         <span className="bg-(--color-primary-3) p-3 rounded-xl flex items-center justify-center">
                             <svg
@@ -142,8 +142,8 @@ const LandingPage = () => {
                                 <path d="M9 10a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1Zm12 1a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1a1 1 0 0 1 0 2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1a1 1 0 0 1 0-2Zm-1-1.82a3 3 0 0 0 0 5.64V17H10a1 1 0 0 0-2 0H4v-2.18a3 3 0 0 0 0-5.64V7h4a1 1 0 0 0 2 0h10Z" />
                             </svg>
                         </span>
-                        <h2 className="text-xl font-semibold text-gray-800">Gestión Centralizada</h2>
-                        <p className="text-start text-xl text-gray-600">
+                        <h2 className="text-start text-sm md:text-xl  font-semibold text-gray-800">Gestión Centralizada</h2>
+                        <p className="text-start text-sm  md:text-xl text-gray-600">
                             Todos tus tickets de soporte en un solo lugar, organizados y accesibles.
                         </p>
                     </div>
@@ -161,8 +161,8 @@ const LandingPage = () => {
                                 />
                             </svg>
                         </span>
-                        <h2 className="text-xl font-semibold text-gray-800">Respuesta Rápida</h2>
-                        <p className="text-start text-xl text-gray-600">
+                        <h2 className="text-start text-sm md:text-xl font-semibold text-gray-800">Respuesta Rápida</h2>
+                        <p className="text-start text-sm md:text-xl text-gray-600">
                             Sistema de asignación inteligente para resolver incidencias más rápido.
                         </p>
                     </div>
@@ -176,8 +176,8 @@ const LandingPage = () => {
                                 />
                             </svg>
                         </span>
-                        <h2 className="text-xl font-semibold text-gray-800">Gestión Colaborativa</h2>
-                        <p className="text-start text-xl text-gray-600">
+                        <h2 className="text-start text-sm md:text-xl font-semibold text-gray-800">Gestión Colaborativa</h2>
+                        <p className="text-start text-sm  md:text-xl text-gray-600">
                             Facilita la comunicación entre usuarios, técnicos y administradores.
                         </p>
                     </div>
@@ -193,8 +193,8 @@ const LandingPage = () => {
                                 />
                             </svg>
                         </span>
-                        <h2 className="text-xl font-semibold text-gray-800">Reportes avanzados</h2>
-                        <p className="text-start text-xl text-gray-600">
+                        <h2 className="text-start text-sm md:text-xl font-semibold text-gray-800">Reportes avanzados</h2>
+                        <p className="text-start text-sm md:text-xl text-gray-600">
                             Análisis detallados y métricas de rendimiento en tiempo real.
                         </p>
                     </div>
@@ -203,8 +203,8 @@ const LandingPage = () => {
                         <span className="bg-(--color-primary-3) p-3 rounded-xl flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" viewBox="0 0 256 256" fill="#2563EB"><g id="galaSecure0" fill="none" stroke="#2563EB" stroke-dasharray="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-opacity="1" stroke-width="16"><path id="galaSecure1" d="m 127.99999,239.96468 c 0,0 95.98506,-31.99503 95.98506,-111.98257"/><path id="galaSecure2" d="M 223.98505,127.98211 V 31.997059 c 0,0 -31.99502,-15.997511 -95.98506,-15.997511"/><path id="galaSecure3" d="m 128,239.96468 c 0,0 -95.985056,-31.99503 -95.985056,-111.98257"/><path id="galaSecure4" d="M 32.014944,127.98211 V 31.997059 c 0,0 31.995019,-15.997509 95.985056,-15.997509"/><path id="galaSecure5" d="M 191.99003,63.99208 C 128,111.9846 112.00249,175.97464 112.00249,175.97464 c 0,0 -15.997511,-19.0946 -31.995019,-31.99502"/></g></svg>
                         </span>
-                        <h2 className="text-xl font-semibold text-gray-800">Seguro y confiable</h2>
-                        <p className="text-start text-xl text-gray-600">
+                        <h2 className="text-start text-sm md:text-xl font-semibold text-gray-800">Seguro y confiable</h2>
+                        <p className="text-start text-sm md:text-xl text-gray-600">
                             Protección de datos empresariales con los más altos estándares.
                         </p>
                     </div>
@@ -213,8 +213,8 @@ const LandingPage = () => {
                         <span className="bg-(--color-primary-3) p-3 rounded-xl flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" viewBox="0 0 432 432"><path fill="#2563EB" d="M213.5 3q88.5 0 151 62.5T427 216t-62.5 150.5t-151 62.5t-151-62.5T0 216T62.5 65.5T213.5 3zm0 384q70.5 0 120.5-50t50-121t-50-121t-120.5-50T93 95T43 216t50 121t120.5 50zM224 109v112l96 57l-16 27l-112-68V109h32z"/></svg>
                         </span>
-                        <h2 className="text-xl font-semibold text-gray-800">Seguimiento en Real</h2>
-                        <p className="text-start text-xl text-gray-600">
+                        <h2 className="text-start text-sm md:text-xl font-semibold text-gray-800">Seguimiento en Real</h2>
+                        <p className="text-start text-sm md:text-xl text-gray-600">
                             Monitorea el estado de cada ticket al instante desde cualquier dispositivo
                         </p>
                     </div>
