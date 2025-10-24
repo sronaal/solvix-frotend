@@ -120,7 +120,7 @@ const LandingPage = () => {
                     </div>
                 </div>
                 <div className="mt-15">
-                    <img className="w-full h-full rounded-3xl shadow-2xl" src="/src/assets/img/foto-banner.jpeg" alt="" />
+                    <img className="w-full h-full rounded-3xl shadow-2xl" src="src/assets/img/foto-banner.jpeg" alt="" />
                 </div>
 
             </section>
