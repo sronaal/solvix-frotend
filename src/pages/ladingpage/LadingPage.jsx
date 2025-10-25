@@ -6,8 +6,8 @@ const LandingPage = () => {
     const [open, setOpen] = useState(false);
 
     const links = [
-        { name: "Características", href: "#" },
-        { name: "Beneficios", href: "#" },
+        { name: "Características", href: "#caracteristicas" },
+        { name: "Funcionamiento", href: "#funcionamiento" },
         { name: "Testimonios", href: "#" },
         { name: "Precio", href: "#" },
     ];
@@ -124,8 +124,8 @@ const LandingPage = () => {
                 </div>
 
             </section>
-
-            <section className="flex flex-col items-center gap-4 bg-(--bg-secundario) min-h-screen text-center p-10 md:p-15">
+            {/* Caracteristicas */}
+            <section id="caracteristicas" className="flex flex-col items-center gap-4 bg-(--bg-secundario) min-h-screen text-center p-10 md:p-15">
                 <span className="bg-(--color-primary-3) px-2 py-1 rounded-md text-(--color-primary) w-fit mb-5">Caracteristicas</span>
                 <h2 className="text-md lg:text-xl  text-(--color-text) w-full">Todo lo que necesitas para gestionar soporte IT</h2>
                 <p className="text-xl lg:text-2xl  w-90 md:w-9/12 lg:w-8/12  text-(--color-text-2)">Una plataforma completa diseñada para optimizar cada aspecto de tu departamento de soporte</p>
@@ -199,9 +199,9 @@ const LandingPage = () => {
                         </p>
                     </div>
 
-                     <div className="flex flex-col gap-6 items-start border border-gray-300 p-8 w-full rounded-2xl shadow-xl bg-white">
+                    <div className="flex flex-col gap-6 items-start border border-gray-300 p-8 w-full rounded-2xl shadow-xl bg-white">
                         <span className="bg-(--color-primary-3) p-3 rounded-xl flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" viewBox="0 0 256 256" fill="#2563EB"><g id="galaSecure0" fill="none" stroke="#2563EB" stroke-dasharray="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-opacity="1" stroke-width="16"><path id="galaSecure1" d="m 127.99999,239.96468 c 0,0 95.98506,-31.99503 95.98506,-111.98257"/><path id="galaSecure2" d="M 223.98505,127.98211 V 31.997059 c 0,0 -31.99502,-15.997511 -95.98506,-15.997511"/><path id="galaSecure3" d="m 128,239.96468 c 0,0 -95.985056,-31.99503 -95.985056,-111.98257"/><path id="galaSecure4" d="M 32.014944,127.98211 V 31.997059 c 0,0 31.995019,-15.997509 95.985056,-15.997509"/><path id="galaSecure5" d="M 191.99003,63.99208 C 128,111.9846 112.00249,175.97464 112.00249,175.97464 c 0,0 -15.997511,-19.0946 -31.995019,-31.99502"/></g></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" viewBox="0 0 256 256" fill="#2563EB"><g id="galaSecure0" fill="none" stroke="#2563EB" stroke-dasharray="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-opacity="1" stroke-width="16"><path id="galaSecure1" d="m 127.99999,239.96468 c 0,0 95.98506,-31.99503 95.98506,-111.98257" /><path id="galaSecure2" d="M 223.98505,127.98211 V 31.997059 c 0,0 -31.99502,-15.997511 -95.98506,-15.997511" /><path id="galaSecure3" d="m 128,239.96468 c 0,0 -95.985056,-31.99503 -95.985056,-111.98257" /><path id="galaSecure4" d="M 32.014944,127.98211 V 31.997059 c 0,0 31.995019,-15.997509 95.985056,-15.997509" /><path id="galaSecure5" d="M 191.99003,63.99208 C 128,111.9846 112.00249,175.97464 112.00249,175.97464 c 0,0 -15.997511,-19.0946 -31.995019,-31.99502" /></g></svg>
                         </span>
                         <h2 className="text-start text-sm md:text-xl font-semibold text-gray-800">Seguro y confiable</h2>
                         <p className="text-start text-sm md:text-xl text-gray-600">
@@ -211,7 +211,7 @@ const LandingPage = () => {
 
                     <div className="flex flex-col gap-6 items-start border border-gray-300 p-8 w-full rounded-2xl shadow-xl bg-white">
                         <span className="bg-(--color-primary-3) p-3 rounded-xl flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" viewBox="0 0 432 432"><path fill="#2563EB" d="M213.5 3q88.5 0 151 62.5T427 216t-62.5 150.5t-151 62.5t-151-62.5T0 216T62.5 65.5T213.5 3zm0 384q70.5 0 120.5-50t50-121t-50-121t-120.5-50T93 95T43 216t50 121t120.5 50zM224 109v112l96 57l-16 27l-112-68V109h32z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" viewBox="0 0 432 432"><path fill="#2563EB" d="M213.5 3q88.5 0 151 62.5T427 216t-62.5 150.5t-151 62.5t-151-62.5T0 216T62.5 65.5T213.5 3zm0 384q70.5 0 120.5-50t50-121t-50-121t-120.5-50T93 95T43 216t50 121t120.5 50zM224 109v112l96 57l-16 27l-112-68V109h32z" /></svg>
                         </span>
                         <h2 className="text-start text-sm md:text-xl font-semibold text-gray-800">Seguimiento en Real</h2>
                         <p className="text-start text-sm md:text-xl text-gray-600">
@@ -221,6 +221,46 @@ const LandingPage = () => {
                 </div>
 
 
+            </section>
+
+            <section id="funcionamiento" className="h-screen bg-(--bg-principal) flex flex-col md:flex-row gap-6 p-10 md:p-20 ">
+                <div className="flex flex-col gap-4">
+                    <span className="bg-(--color-primary-3) p-1 text-sm rounded-md text-(--color-primary) w-fit">Como funciona</span>
+                    <p>Simple, Rapido y Eficiente</p>
+                    <ul className="space-y-4">
+                        <li className="flex flex-col">
+                            <div className="flex items-center gap-4">
+                                <span className="w-10 h-10 bg-(--color-primary) p-2 rounded-full flex justify-center text-white">1</span>
+                                <h2 className="font-bold">Usuario crea un ticket</h2>
+                            </div>
+                            <p className="ml-14 text-(--color-text)">Formulario intuitivo con categorías, prioridades y adjuntos</p>
+                        </li>
+                        <li className="flex flex-col">
+                            <div className="flex items-center gap-4">
+                                <span className="w-10 h-10 bg-(--color-primary) p-2 rounded-full flex justify-center text-white">2</span>
+                                <h2 className="font-bold">Asignación automática</h2>
+                            </div>
+                            <p className="ml-14 text-(--color-text)">El sistema asigna el ticket al técnico más adecuado</p>
+                        </li>
+                        <li className="flex flex-col">
+                            <div className="flex items-center gap-4">
+                                <span className="w-10 h-10 bg-(--color-primary) p-2 rounded-full flex justify-center text-white">3</span>
+                                <h2 className="font-bold">Seguimiento en tiempo real</h2>
+                            </div>
+                            <p className="ml-14 text-(--color-text)">Ambas partes pueden comunicarse y ver el progreso</p>
+                        </li>
+                        <li className="flex flex-col ">
+                            <div className="flex items-center gap-4">
+                                <span className="w-10 h-10 bg-(--color-primary) p-2 rounded-full flex justify-center text-white">4</span>
+                                <h2 className="font-bold">Resolución y cierre</h2>
+                            </div>
+                            <p className="ml-14 text-(--color-text)">El ticket se cierra una vez resuelto el problema</p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <img className="w-full h-full rounded-3xl shadow-2xl" src="foto-2.jpeg" alt="" />
+                </div>
             </section>
         </>
     );
