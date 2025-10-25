@@ -8,8 +8,7 @@ const LandingPage = () => {
     const links = [
         { name: "Características", href: "#caracteristicas" },
         { name: "Funcionamiento", href: "#funcionamiento" },
-        { name: "Testimonios", href: "#" },
-        { name: "Precio", href: "#" },
+        { name: "Contacto", href: "#" },
     ];
 
     return (
@@ -223,44 +222,134 @@ const LandingPage = () => {
 
             </section>
 
-            <section id="funcionamiento" className="h-screen bg-(--bg-principal) flex flex-col md:flex-row gap-6 p-10 md:p-20 ">
-                <div className="flex flex-col gap-4">
-                    <span className="bg-(--color-primary-3) p-1 text-sm rounded-md text-(--color-primary) w-fit">Como funciona</span>
-                    <p>Simple, Rapido y Eficiente</p>
-                    <ul className="space-y-4">
+            <section
+                id="funcionamiento"
+                className="bg-(--bg-principal) flex flex-col md:flex-row gap-10 p-6 sm:p-10 md:p-20 items-center overflow-hidden"
+            >
+                <div className="flex flex-col gap-4 w-full md:w-1/2">
+                    <span className="bg-(--color-primary-3) p-1 text-sm rounded-md text-(--color-primary) w-fit">
+                        Como funciona
+                    </span>
+                    <p className="text-xl sm:text-2xl font-semibold">Simple, Rápido y Eficiente</p>
+
+                    <ul className="space-y-6">
                         <li className="flex flex-col">
                             <div className="flex items-center gap-4">
-                                <span className="w-10 h-10 bg-(--color-primary) p-2 rounded-full flex justify-center text-white">1</span>
+                                <span className="w-10 h-10 bg-(--color-primary) p-2 rounded-full flex justify-center items-center text-white font-bold">
+                                    1
+                                </span>
                                 <h2 className="font-bold">Usuario crea un ticket</h2>
                             </div>
-                            <p className="ml-14 text-(--color-text)">Formulario intuitivo con categorías, prioridades y adjuntos</p>
+                            <p className="ml-14 text-(--color-text)">
+                                Formulario intuitivo con categorías, prioridades y adjuntos
+                            </p>
                         </li>
+
                         <li className="flex flex-col">
                             <div className="flex items-center gap-4">
-                                <span className="w-10 h-10 bg-(--color-primary) p-2 rounded-full flex justify-center text-white">2</span>
+                                <span className="w-10 h-10 bg-(--color-primary) p-2 rounded-full flex justify-center items-center text-white font-bold">
+                                    2
+                                </span>
                                 <h2 className="font-bold">Asignación automática</h2>
                             </div>
-                            <p className="ml-14 text-(--color-text)">El sistema asigna el ticket al técnico más adecuado</p>
+                            <p className="ml-14 text-(--color-text)">
+                                El sistema asigna el ticket al técnico más adecuado
+                            </p>
                         </li>
+
                         <li className="flex flex-col">
                             <div className="flex items-center gap-4">
-                                <span className="w-10 h-10 bg-(--color-primary) p-2 rounded-full flex justify-center text-white">3</span>
+                                <span className="w-10 h-10 bg-(--color-primary) p-2 rounded-full flex justify-center items-center text-white font-bold">
+                                    3
+                                </span>
                                 <h2 className="font-bold">Seguimiento en tiempo real</h2>
                             </div>
-                            <p className="ml-14 text-(--color-text)">Ambas partes pueden comunicarse y ver el progreso</p>
+                            <p className="ml-14 text-(--color-text)">
+                                Ambas partes pueden comunicarse y ver el progreso
+                            </p>
                         </li>
-                        <li className="flex flex-col ">
+
+                        <li className="flex flex-col">
                             <div className="flex items-center gap-4">
-                                <span className="w-10 h-10 bg-(--color-primary) p-2 rounded-full flex justify-center text-white">4</span>
+                                <span className="w-10 h-10 bg-(--color-primary) p-2 rounded-full flex justify-center items-center text-white font-bold">
+                                    4
+                                </span>
                                 <h2 className="font-bold">Resolución y cierre</h2>
                             </div>
-                            <p className="ml-14 text-(--color-text)">El ticket se cierra una vez resuelto el problema</p>
+                            <p className="ml-14 text-(--color-text)">
+                                El ticket se cierra una vez resuelto el problema
+                            </p>
                         </li>
                     </ul>
                 </div>
-                <div>
-                    <img className="w-full h-full rounded-3xl shadow-2xl" src="foto-2.jpeg" alt="" />
+
+                <div className="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
+                    <img
+                        className="w-full max-w-md sm:max-w-lg md:max-w-xl rounded-3xl shadow-2xl object-contain"
+                        src="foto-2.jpeg"
+                        alt="Ejemplo funcionamiento"
+                    />
                 </div>
+            </section>
+
+
+            <section className="h-screen">
+                <div className="h-[50vh] bg-(--color-primary)  text-white flex flex-col items-center justify-center gap-5 text-center mt-10">
+                    <h3>¿Listo para transformar tu soporte IT?</h3>
+                    <h2 className="text-xl text-wrap w-2xl lg:text-2xl lg:w-3xl ">Únete a cientos de empresas que ya confían en Solvix para gestionar sus incidencias de manera eficiente.</h2>
+                    <div className="flex items-center gap-5">
+                        <Link to='/auth' className="bg-white text-(--color-primary) px-4 py-2 rounded-md transition-colors flex items-center gap-2 mx-auto">Comienza Gratis</Link>
+                        <Link to='/demo' className="px-4 py-2 rounded-md border hover:bg-white hover:text-(--color-primary)" >Agendar Demo</Link>
+                    </div>
+                </div>
+                <footer className="bg-(--color-primary-4) text-white">
+                    <div className="max-w-7xl mx-auto px-6 py-12">
+                        <div className="flex flex-col md:flex-row md:justify-between gap-8">
+                            <div className="flex-1">
+                                <div className="flex items-center gap-3">
+                                    <SolvixLogo size="md" />
+                                </div>
+                                <p className="mt-4 text-sm text-gray-300 max-w-xs">
+                                    Sistema de gestión de tickets IT para empresas modernas.
+                                </p>
+                            </div>
+
+                            <div className="flex-1 flex justify-between">
+                                <div>
+                                    <h4 className="font-semibold mb-3">Producto</h4>
+                                    <ul className="space-y-2 text-sm text-gray-300">
+                                        <li><a href="#" className="hover:underline">Características</a></li>
+                                        <li><a href="#" className="hover:underline">Precios</a></li>
+                                        <li><a href="#" className="hover:underline">Integraciones</a></li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 className="font-semibold mb-3">Empresa</h4>
+                                    <ul className="space-y-2 text-sm text-gray-300">
+                                        <li><a href="#" className="hover:underline">Sobre Nosotros</a></li>
+                                        <li><a href="#" className="hover:underline">Blog</a></li>
+                                        <li><a href="#" className="hover:underline">Contacto</a></li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 className="font-semibold mb-3">Legal</h4>
+                                    <ul className="space-y-2 text-sm text-gray-300">
+                                        <li><a href="#" className="hover:underline">Privacidad</a></li>
+                                        <li><a href="#" className="hover:underline">Términos</a></li>
+                                        <li><a href="#" className="hover:underline">Seguridad</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="mt-8 border-t border-gray-700 pt-6 flex flex-col md:flex-row items-center justify-between">
+                            <p className="text-sm text-gray-400">© 2025 Solvix. Todos los derechos reservados.</p>
+                            <div className="mt-4 md:mt-0 text-sm text-gray-400">Hecho con ❤️ para empresas modernas</div>
+                        </div>
+                    </div>
+                </footer>
             </section>
         </>
     );
