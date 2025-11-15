@@ -19,7 +19,7 @@ const ForgotPassword = () => {
           <div className="relative">
 
             <FiUser className='absolute top-2 ml-1 size-6 text-[#2563EB]' />
-            <input className='rounded-lg p-2 border-0 bg-gray-100 pl-8 w-full' type="email" placeholder='email@empresa.com' />
+            <input className='rounded-lg p-2 border-0 bg-gray-100 pl-8 w-full text-gray-400 focus:text-gray-600' type="email" placeholder='email@empresa.com' />
           </div>
 
          
