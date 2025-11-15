@@ -9,7 +9,7 @@ const ForgotPassword = () => {
 
 
   return (
-    <div className="flex flex-col  lg:flex-row">
+    <div className="flex flex-col lg:flex-row justify-center items-center ml-10 mr-10 p-30 sm:p-20 lg:p-1">
       <Content />
       <div className="bg-white m w-[500px] md:mt-40 ml-20 mt-32 md:ml-20 h-fit  rounded-lg p-8 shadow-lg">
         <h1>Recuperar Contraseña</h1>

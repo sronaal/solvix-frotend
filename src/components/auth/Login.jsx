@@ -13,9 +13,9 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(true)
 
   return (
-    <div className='flex flex-col lg:flex-row'>
+    <div className='flex flex-col lg:flex-row justify-center items-center ml-10 mr-10 p-30 sm:p-20 lg:p-1'>
       <Content />
-      <div className='w-[600px] h-fit bg-white m-20 md:mt-30  rounded-lg p-4 shadow-lg'>
+      <div className='w-[400px] md:w-[600px] bg-white mt-10 md:ml-20 lg:mt-30   rounded-lg p-4 shadow-lg'>
         <p>Bienvenido</p>
         <p className='text-sm text-(--color-text)'>Inicia sesión en tu cuenta.</p>
 
@@ -24,7 +24,7 @@ const Login = () => {
 
           <div className='mb-2 relative'>
             <FiUser className='absolute top-2 ml-1 size-6 text-[#2563EB]' />
-            <input className='rounded-lg p-2 border-0 bg-gray-100 pl-8 w-full'
+            <input className='rounded-lg p-2 border-0 bg-gray-100 pl-8 w-80 md:w-full'
               type={showPassword ? "text" : "password"}
               placeholder='email@empresa.com' />
           </div>
@@ -33,7 +33,7 @@ const Login = () => {
           <div className='mb-2 relative'>
             <GrInsecure className='absolute ml-1 top-2 size-6 text-[#2563EB]' />
             <input
-              className='rounded-lg p-2 bg-gray-100 pl-8 w-full'
+              className='rounded-lg p-2 bg-gray-100 pl-8 w-80 md:w-full'
               type={showPassword ? "text" : "password"}
               placeholder='*********'
             />
