@@ -13,9 +13,9 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(true)
 
   return (
-    <div className='flex'>
+    <div className='flex flex-col lg:flex-row'>
       <Content />
-      <div className='w-[600px] h-fit bg-white m-20 md:mt-30 rounded-lg p-4 shadow-lg'>
+      <div className='w-[600px] h-fit bg-white m-20 md:mt-30  rounded-lg p-4 shadow-lg'>
         <p>Bienvenido</p>
         <p className='text-sm text-(--color-text)'>Inicia sesión en tu cuenta.</p>
 

@@ -9,9 +9,9 @@ const ForgotPassword = () => {
 
 
   return (
-    <div className="flex">
+    <div className="flex flex-col  lg:flex-row">
       <Content />
-      <div className="bg-white m w-[500px] md:mt-40 ml-20 mt-32 md:ml-20 h-fit rounded-lg p-8 shadow-lg">
+      <div className="bg-white m w-[500px] md:mt-40 ml-20 mt-32 md:ml-20 h-fit  rounded-lg p-8 shadow-lg">
         <h1>Recuperar Contraseña</h1>
         <p className="text-sm text-(--color-text) mb-10">Recupere su contraseña enviando un correo electronico</p>
 
@@ -24,7 +24,7 @@ const ForgotPassword = () => {
 
          
           <button className='bg-(--color-primary) w-full text-white rounded-lg p-2 mt-6 hover:bg-(--color-primary-2) transition-colors cursor-pointer'>Enviar</button>
-
+          <p className="text-center mt-2 text-sm">¿Ya tienes tu contraseña? <span className="hover:text-[#2563EB]"> <Link to='/auth'>Iniciar Sesión</Link> </span> </p>
         </form>
 
 
