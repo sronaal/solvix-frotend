@@ -6,6 +6,8 @@ import UserLayout from "./UserLayout";
 import TecnicoLayout from "./TecnicoLayout";
 
 import AuthLayout from "./AuthLayout";
+import Sidebar from "../components/layout/Sidebar";
+import Header from "../components/layout/Header";
 
 export default function RootLayout() {
   const { user, loading } = useAuth();
@@ -17,7 +19,9 @@ export default function RootLayout() {
 
   switch (user.rol) {
     case "administrador":
-      return <AdminLayout />;
+      return <AdminLayout/>
+        
+      
 
     case "usuario":
       return <UserLayout />;

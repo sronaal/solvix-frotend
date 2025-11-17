@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
         localStorage.setItem("user", JSON.stringify({
             name: "ronal",
-            rol: "Admin"
+            rol: "administrador"
         }));
 
         const stored = localStorage.getItem('user')
