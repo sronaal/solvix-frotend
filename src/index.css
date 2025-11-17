@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 
-:root{
+:root {
     --bg-principal: #F2F8FF;
     --color-primary: #2563EB;
     --color-primary-2: #0f57f2;
@@ -9,5 +9,11 @@
     --color-primary-4: #0F172B;
     --color-text: #383F50;
     --color-text-2: #49596F;
+
+}
+
+body {
+    font-family: "Noto Sans", sans-serif;
+
 
 }
