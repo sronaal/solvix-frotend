@@ -1,8 +1,17 @@
 import { useState } from "react"
+import { useNavigate } from 'react-router-dom'
 import { SolvixLogo } from "../SolvixLogo"
+import { SlLogout } from "react-icons/sl";
+
 import { Link } from "react-router-dom"
 
 export default function Sidebar({ open, setOpen }) {
+
+    const navigate = useNavigate()
+    const onButton = () => {
+        localStorage.removeItem("user")
+        navigate('/auth')
+    }
 
     return (
         <>
@@ -26,7 +35,7 @@ export default function Sidebar({ open, setOpen }) {
                     <SolvixLogo />
                 </span>
                 <hr className="boder-b border-gray-200" />
-                <nav>
+                <nav className="mb-32 text-(--color-text)">
                     <Link 
                     to='/solvix'
                     className="flex items-center  gap-4 font-semibold hover:bg-blue-100 p-2 rounded-md w-full mb-4 text-(--color-text) hover:text-(--color-primary-2)">
@@ -50,6 +59,13 @@ export default function Sidebar({ open, setOpen }) {
 
 
 
+                </nav>
+
+                <nav>
+                    <button onClick={onButton} className="flex items-center gap-4 p-4 ml-5 bg-[#FFF] border border-(--color-primary) rounded-lg hover:bg-(--color-primary-2) text-(--color-text) hover:text-(--color-primary-3)" >
+                        <SlLogout />
+                        Cerrar Sesión
+                    </button>
                 </nav>
             </div>
         </>

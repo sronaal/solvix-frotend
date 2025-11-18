@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = ({ title, subtitle, onToggleSidebar }) => {
   return (
-    <div className='flex justify-between bg-white w-full p-8'>
+    <div className='flex justify-between bg-white w-full p-8 pb-10 border-b border-gray-300'>
 
 
 

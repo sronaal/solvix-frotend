@@ -17,11 +17,31 @@ const AppRoutes = () => {
           <Route path='login' element={<Login />}></Route>
           <Route path='forgot-password' element={<ForgotPassword />}></Route>
         </Route>
+
         <Route path='/' element={<LadingPage />}></Route>
-        <Route path='solvix' element={<RootLayout />}>
-          <Route index path='' element={<AdminPage />}/>
-          <Route path='asignar' element={<AsignacionTicketPage/>}/>
-          <Route path='usuarios' element={<GestionUsuariosPage/>}/>
+
+        <Route
+          path='solvix'
+          element={<RootLayout />}
+          handle={{ title: "Panel Principal" }}
+        >
+          <Route
+            index
+            element={<AdminPage />}
+            handle={{ title: "Dashboard" }}
+          />
+
+          <Route
+            path='asignar'
+            element={<AsignacionTicketPage />}
+            handle={{ title: "Asignación de Tickets" }}
+          />
+
+          <Route
+            path='usuarios'
+            element={<GestionUsuariosPage />}
+            handle={{ title: "Gestión de Usuarios" }}
+          />
         </Route>
       </Routes>
     </>
