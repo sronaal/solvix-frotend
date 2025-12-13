@@ -8,6 +8,8 @@ import TecnicoLayout from "./TecnicoLayout";
 import AuthLayout from "./AuthLayout";
 import Sidebar from "../components/layout/Sidebar";
 import Header from "../components/layout/Header";
+
+
 import { useNavigate } from 'react-router-dom'
 
 export default function RootLayout() {
