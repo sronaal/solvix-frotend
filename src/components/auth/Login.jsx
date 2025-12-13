@@ -6,10 +6,33 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { Link } from 'react-router-dom'
 import Content from './Content'
+import { useForm } from 'react-hook-form';
+import { login } from '../../services/AuthApi';
 
 const Login = () => {
+
+  const { register, handleSubmit, watch, formState: { errors } } = useForm()
+
   const [showPassword, setShowPassword] = useState(true)
 
+
+  const onSubmit = (data) => {
+    login(data)
+    .then(response => {
+      console.log(response.data)
+      localStorage.setItem("data", JSON.stringify(response.data.data))
+    })
+    .catch((error) => {
+      console.log("Error al iniciar sesión:", error)
+      if(error.status === 401){
+        alert("Credenciales incorrectas")
+      }
+      if (error.code === 'ERR_NETWORK'){
+        alert("Error de red. Por favor, verifica que el servidor esté en funcionamiento.")
+      }
+    })
+
+  }
   return (
     <div className='flex flex-col lg:flex-row justify-center items-center px-6 py-10 md:px-16 lg:px-4 w-full'>
       <Content />
@@ -18,7 +41,7 @@ const Login = () => {
         <p className='text-xl font-semibold'>Bienvenido</p>
         <p className='text-sm text-(--color-text)'>Inicia sesión en tu cuenta.</p>
 
-        <form className='flex flex-col mt-4'>
+        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col mt-4'>
           <label className='mt-4 text-(--color-text) mb-2'>Correo electrónico</label>
 
           <div className='mb-2 relative w-full'>
@@ -27,7 +50,10 @@ const Login = () => {
               className='rounded-lg p-2 border-0 bg-gray-100 pl-9 w-full text-gray-400 focus:text-gray-600'
               type='email'
               placeholder='email@empresa.com'
+              {...register("email", { required: true })}
             />
+            {errors.email && <span className="text-red-500 text-sm">El correo es obligatorio</span>}
+
           </div>
 
           <label className='mt-4 mb-2 text-(--color-text)'>Contraseña</label>
@@ -38,7 +64,9 @@ const Login = () => {
               className='rounded-lg p-2 bg-gray-100 pl-9 w-full text-gray-400 focus:text-gray-600'
               type={showPassword ? "text" : "password"}
               placeholder='*********'
+              {...register("password", { required: true })}
             />
+            {errors.password && <span className="text-red-500 text-sm">La contraseña es obligatoria</span>}
 
             {showPassword ? (
               <FaEye
@@ -53,6 +81,9 @@ const Login = () => {
             )}
           </div>
 
+          {errors.exampleRequired && <span>This field is required</span>}
+
+
           <Link
             className='text-sm text-(--color-primary) self-end mt-2 hover:underline'
             to="forgot-password"
@@ -60,8 +91,9 @@ const Login = () => {
             ¿Olvidaste tu contraseña?
           </Link>
 
-          <button className='bg-(--color-primary) text-white rounded-lg p-2 mt-6 hover:bg-(--color-primary-2) transition-colors cursor-pointer'>
+          <button type='submit' className='bg-(--color-primary) text-white rounded-lg p-2 mt-6 hover:bg-(--color-primary-2) transition-colors cursor-pointer'>
             Iniciar sesión
+
           </button>
         </form>
       </div>
