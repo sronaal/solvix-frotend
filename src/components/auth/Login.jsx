@@ -4,33 +4,38 @@ import { GrInsecure } from "react-icons/gr";
 import { FiUser } from "react-icons/fi";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Content from './Content'
 import { useForm } from 'react-hook-form';
-import { login } from '../../services/AuthApi';
+import { IniciarSesion } from '../../services/AuthApi';
+import { useAuth } from '../../context/AuthContext';
 
 const Login = () => {
 
   const { register, handleSubmit, watch, formState: { errors } } = useForm()
-
   const [showPassword, setShowPassword] = useState(true)
-
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    login(data)
-    .then(response => {
-      console.log(response.data)
-      localStorage.setItem("data", JSON.stringify(response.data.data))
-    })
-    .catch((error) => {
-      console.log("Error al iniciar sesión:", error)
-      if(error.status === 401){
-        alert("Credenciales incorrectas")
-      }
-      if (error.code === 'ERR_NETWORK'){
-        alert("Error de red. Por favor, verifica que el servidor esté en funcionamiento.")
-      }
-    })
+    IniciarSesion(data)
+      .then(response => {
+        // The server returns { user: ..., token: ... } directly in response.data
+       
+        const { user, token } = response.data.data;
+        login(user, token)
+        localStorage.setItem("data", JSON.stringify(user))
+        navigate("/solvix")
+      })
+      .catch((error) => {
+        console.log("Error al iniciar sesión:", error)
+        if (error.status === 401) {
+          alert("Credenciales incorrectas")
+        }
+        if (error.code === 'ERR_NETWORK') {
+          alert("Error de red. Por favor, verifica que el servidor esté en funcionamiento.")
+        }
+      })
 
   }
   return (
