@@ -41,12 +41,12 @@ const Login = () => {
             />
 
             {showPassword ? (
-              <FaEyeSlash
+              <FaEye
                 className='absolute right-3 top-3 size-5 cursor-pointer text-[#2563EB]'
                 onClick={() => setShowPassword(false)}
               />
             ) : (
-              <FaEye
+              <FaEyeSlash
                 className='absolute right-3 top-3 size-5 cursor-pointer text-[#2563EB]'
                 onClick={() => setShowPassword(true)}
               />
