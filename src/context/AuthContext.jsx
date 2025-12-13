@@ -1,35 +1,60 @@
-import { createContext, useContext, useState, useEffect } from 'react'
+import { createContext, useState, useContext, useEffect } from "react";
 
-const AuthContext = createContext()
-
+const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true)
+  const [user, setUser] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const checkLogin = () => {
+      const token = localStorage.getItem("token");
+      const savedUser = localStorage.getItem("user");
 
+      if (token && savedUser) {
+        setUser(JSON.parse(savedUser));
+        setIsAuthenticated(true);
+      }
+      setLoading(false);
+    };
+    checkLogin();
+  }, []);
 
-    useEffect(() => {
+  const login = (userData, token) => {
+    localStorage.setItem("token", token);
+    localStorage.setItem("user", JSON.stringify(userData));
+    setUser(userData);
+    setIsAuthenticated(true);
+  };
 
-       localStorage.setItem("user", JSON.stringify({
-            name: "ronal",
-            rol: "administrador"
-        }));
+  const logout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    setUser(null);
+    setIsAuthenticated(false);
+  };
 
-        const stored = localStorage.getItem('user')
-
-        if (stored) setUser(JSON.parse(stored))
-
-        setLoading(false)
-    }, [])
-
-
-    return (
-        <AuthContext.Provider value={{ user, setUser, loading }}>
-            {children}
-        </AuthContext.Provider>
-    )
+  return (
+    <AuthContext.Provider
+      value={{
+        user,
+        login,
+        logout,
+        isAuthenticated,
+        loading,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
-export const useAuth = () => useContext(AuthContext)
-
+// 3. Crear un Hook personalizado para usar el contexto fácilmente
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuth debe usarse dentro de un AuthProvider");
+  }
+  return context;
+};
