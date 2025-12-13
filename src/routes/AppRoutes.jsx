@@ -7,6 +7,7 @@ import RootLayout from '../layout/RootLayout'
 import { AdminPage } from '../pages/AdminPage'
 import { AsignacionTicketPage } from '../pages/AsignacionTicketPage'
 import { GestionUsuariosPage } from '../pages/GestionUsuariosPage'
+import { ProtectedRoute } from './ProtectedRoute'
 
 const AppRoutes = () => {
   return (
@@ -20,28 +21,31 @@ const AppRoutes = () => {
 
         <Route path='/' element={<LadingPage />}></Route>
 
-        <Route
-          path='solvix'
-          element={<RootLayout />}
-          handle={{ title: "Panel Principal" }}
-        >
+        <Route element={<ProtectedRoute />}>
           <Route
-            index
-            element={<AdminPage />}
-            handle={{ title: "Dashboard" }}
-          />
+            path='solvix'
+            element={<RootLayout />}
+            handle={{ title: "Panel Principal" }}
+          >
+            <Route
+              index
+              element={<AdminPage />}
+              handle={{ title: "Dashboard" }}
+            />
 
-          <Route
-            path='asignar'
-            element={<AsignacionTicketPage />}
-            handle={{ title: "Asignación de Tickets" }}
-          />
+            <Route
+              path='asignar'
+              element={<AsignacionTicketPage />}
+              handle={{ title: "Asignación de Tickets" }}
+            />
 
-          <Route
-            path='usuarios'
-            element={<GestionUsuariosPage />}
-            handle={{ title: "Gestión de Usuarios" }}
-          />
+            <Route
+              path='usuarios'
+              element={<GestionUsuariosPage />}
+              handle={{ title: "Gestión de Usuarios" }}
+            />
+          </Route>
+
         </Route>
       </Routes>
     </>
