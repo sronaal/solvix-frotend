@@ -18,11 +18,18 @@ const Login = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    IniciarSesion(data)
+    IniciarSesion({correo: data.email, password: data.password})
       .then(response => {
-        // The server returns { user: ..., token: ... } directly in response.data
-       
-        const { user, token } = response.data.data;
+        console.log(response)
+        // The server returns the user data and token directly in response.data
+        const { token, ...userData } = response.data;
+        
+        // Map backend 'rol' to frontend 'role' expected by ProtectedRoute
+        const user = {
+          ...userData,
+          role: userData.rol
+        };
+
         login(user, token)
         localStorage.setItem("data", JSON.stringify(user))
         navigate("/solvix")

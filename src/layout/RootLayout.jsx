@@ -22,13 +22,13 @@ export default function RootLayout() {
 
 
   switch (user.role) {
-    case "admin":
+    case "ADMIN":
       return <AdminLayout />
 
-    case "usuario":
+    case "SOLICITANTE":
       return <UserLayout />;
 
-    case "technician":
+    case "TECNICO":
       return <TecnicoLayout />;
     default:
       return <Navigate to="/auth/login" replace />;
