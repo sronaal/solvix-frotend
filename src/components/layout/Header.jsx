@@ -2,29 +2,27 @@ import React from 'react'
 
 const Header = ({ title, subtitle, onToggleSidebar }) => {
   return (
-    <div className='flex justify-between bg-white w-full p-8 pb-10 border-b border-gray-300'>
+    <header className='sticky top-0 z-30 flex justify-between items-center bg-white/80 backdrop-blur-md px-8 py-5 border-b border-gray-100 transition-all duration-300'>
 
-
-
-      <div className='flex items-center gap-5'>
-        <button onClick={onToggleSidebar} className='lg:hidden cursor-pointer'>
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32"><path fill="none" stroke="#2563EB" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h22M5 16h22M5 24h22" /></svg>
+      <div className='flex items-center gap-4'>
+        <button onClick={onToggleSidebar} className='lg:hidden p-2 rounded-lg hover:bg-gray-100 text-(--color-primary) transition-colors'>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
-        <span>
-          <h1 className='text-2xl text-[#2563EB]'>{title}</h1>
-          <p className='text-sm text-gray-500'>{subtitle}</p>
-        </span>
+
+        <div>
+          <h1 className='text-2xl font-bold text-gray-800 tracking-tight'>{title}</h1>
+          <p className='text-sm text-gray-500 font-medium'>{subtitle}</p>
+        </div>
       </div>
-      <div>
-        <button className="w-10 h-10 flex items-center justify-center rounded-full bg-[#2563EB] text-white font-semibold hover:cursor-pointer">
+
+      <div className="flex items-center gap-4">
+        <button className="relative w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-indigo-500 to-violet-500 text-white font-bold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-300 transform hover:scale-105">
           RS
+          <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></span>
         </button>
-
-
       </div>
 
-
-    </div>
+    </header>
   )
 }
 

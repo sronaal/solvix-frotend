@@ -20,19 +20,19 @@ export default function RootLayout() {
     <div className="flex">
       <Sidebar open={open} setOpen={setOpen} />
 
-      <div className={`flex flex-col flex-1 h-screen transition-all duration-300 
-        ${open ? "ml-64" : "ml-0"} lg:ml-64
+      <div className={`flex flex-col flex-1 min-h-screen bg-(--bg-principal) transition-all duration-300 
+        ${open ? "ml-64" : "ml-0"} lg:ml-72
       `}>
-        
+
         <Header
           title={currentTitle}
           subtitle="Panel de Administración"
           onToggleSidebar={() => setOpen(!open)}
         />
 
-        <div className="p-4 overflow-auto h-full">
+        <main className="p-8 overflow-auto h-full animate-fade-in-up">
           <Outlet />
-        </div>
+        </main>
       </div>
     </div>
   );

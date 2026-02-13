@@ -1,21 +1,32 @@
 @import "tailwindcss";
 
 
-:root {
-    --bg-principal: #F2F8FF;
-    --color-primary: #2563EB;
-    --color-primary-2: #0f57f2;
-    --color-primary-3: #DBEAFE;
-    --color-primary-4: #0F172B;
-    --color-primary-5:#EFF6FF;
-    --color-text: #383F50;
-    --color-text-2: #49596F;
-    
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+:root {
+    /* Primary Palette - Indigo/Violet */
+    --color-primary: #6366f1;       /* Indigo 500 */
+    --color-primary-2: #4f46e5;     /* Indigo 600 - Hover */
+    --color-primary-3: #e0e7ff;     /* Indigo 100 - Light Accent */
+    --color-primary-4: #312e81;     /* Indigo 900 - Dark Text */
+    --color-primary-5: #eef2ff;     /* Indigo 50 - Background Tint */
+
+    /* Neutral Palette - Slate */
+    --bg-principal: #f8fafc;        /* Slate 50 */
+    --color-text: #334155;          /* Slate 700 */
+    --color-text-2: #64748b;        /* Slate 500 */
+    --color-border: #e2e8f0;        /* Slate 200 */
+    
+    /* Glass Effect Variables */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
 }
 
 body {
-    font-family: "Noto Sans", sans-serif;
-
-
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-principal);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
