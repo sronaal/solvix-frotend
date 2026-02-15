@@ -1,68 +1,91 @@
-import React, { useState } from 'react'
-import { LuTicket } from "react-icons/lu";
-import { MdOutlineAccessTime } from "react-icons/md";
-import { GiConfirmed } from "react-icons/gi";
+import React from 'react';
+import {
+  Users,
+  Ticket,
+  Clock,
+  CheckCircle2,
+  AlertCircle,
+  TrendingUp,
+  MoreHorizontal
+} from 'lucide-react';
 
-const Stats = () => {
-
-  const [totalTickets, setTotalTicket] = useState(100)
-  const [enProceso, setEnProceso] = useState(20)
-  const [resueltos, setResueltos] = useState(70)
-  const [pendientes, setPendientes] = useState(10)
-
+export const Stats = () => {
+  const statsData = [
+    {
+      title: "Total Tickets",
+      value: "1,248",
+      change: "+12.5%",
+      type: "positive",
+      icon: Ticket,
+      color: "indigo",
+      gradient: "from-indigo-600 to-blue-600"
+    },
+    {
+      title: "Tickets Activos",
+      value: "156",
+      change: "-4.2%",
+      type: "negative",
+      icon: AlertCircle,
+      color: "rose",
+      gradient: "from-rose-500 to-orange-500"
+    },
+    {
+      title: "Promedio Cierre",
+      value: "2h 45m",
+      change: "+8.1%",
+      type: "positive",
+      icon: Clock,
+      color: "emerald",
+      gradient: "from-emerald-500 to-teal-500"
+    },
+    {
+      title: "Técnicos Online",
+      value: "12",
+      change: "0%",
+      type: "neutral",
+      icon: Users,
+      color: "amber",
+      gradient: "from-amber-500 to-orange-400"
+    }
+  ];
 
   return (
-    <div className='flex gap-5 flex-wrap justify-center m-2 p-2'>
-      <div className='flex items-center justify-between gap-5 bg-white shadow w-52 p-5 rounded-xl'>
-        <span>
-          <h2 className='text-(--color-text-2)'>Ticket Totales</h2>
-          <p className='font-semibold'>{totalTickets}</p>
-        </span>
-        <span className='bg-(--color-primary-5) p-2 rounded-md'>
-          <LuTicket className='size-6 text-(--color-primary)' />
-        </span>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-1">
+      {statsData.map((stat, index) => (
+        <div
+          key={index}
+          className="group relative bg-white rounded-3xl p-6 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden"
+        >
+          {/* Background Decorative Gradient */}
+          <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${stat.gradient} opacity-[0.03] rounded-bl-[80px] group-hover:opacity-[0.06] transition-opacity`} />
 
-      </div>
+          <div className="flex justify-between items-start mb-4">
+            <div className={`p-3 rounded-2xl bg-${stat.color}-50 text-${stat.color}-600 group-hover:scale-110 transition-transform duration-300`}>
+              <stat.icon size={22} />
+            </div>
+            <button className="text-slate-300 hover:text-slate-500 transition-colors p-1">
+              <MoreHorizontal size={18} />
+            </button>
+          </div>
 
-       <div className='flex items-center justify-between gap-5 bg-white shadow w-52 p-5 rounded-xl'>
-        <span>
-          <h2 className='text-(--color-text-2)'>En Proceso</h2>
-          <p className='font-semibold'>{ enProceso }</p>
-        </span>
-        <span className='bg-[#FFF7ED] p-2 rounded-md'>
-          <MdOutlineAccessTime className='size-6 text-[#F54C03]' />
-        </span>
-      </div>
-
-       <div className='flex items-center justify-between gap-5 bg-white shadow w-52 p-5 rounded-xl'>
-        <span>
-          <h2 className='text-(--color-text-2)'>Resueltos</h2>
-          <p className='font-semibold'>{ resueltos }</p>
-        </span>
-        <span className='bg-[#F8FAFC] p-2 rounded-md'>
-          <GiConfirmed className='size-6 text-green-600' />
-        </span>
-      </div>
-
-             <div className='flex items-center justify-between gap-5 bg-white shadow w-52 p-5 rounded-xl'>
-        <span>
-          <h2 className='text-(--color-text-2)'>Pendientes</h2>
-          <p className='font-semibold'>{ pendientes }</p>
-        </span>
-        <span className='bg-[#FEF2F2] p-2 rounded-md'>
-          <GiConfirmed className='size-6 text-red-600' />
-        </span>
-      </div>
-     
-
-
-      </div>
-
-
-    
-    )
-    
-  
-  }
-
+          <div>
+            <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">{stat.title}</p>
+            <div className="flex items-end gap-3">
+              <h3 className="text-2xl font-black text-slate-900 tracking-tight">{stat.value}</h3>
+              <div className={`flex items-center gap-1 mb-1 px-1.5 py-0.5 rounded-lg text-[10px] font-black tracking-wider border ${stat.type === 'positive'
+                  ? 'bg-emerald-50 text-emerald-600 border-emerald-100'
+                  : stat.type === 'negative'
+                    ? 'bg-rose-50 text-rose-600 border-rose-100'
+                    : 'bg-slate-50 text-slate-400 border-slate-100'
+                }`}>
+                <TrendingUp size={10} className={stat.type === 'negative' ? 'rotate-180' : ''} />
+                {stat.change}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
 export default Stats
