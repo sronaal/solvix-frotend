@@ -39,6 +39,11 @@ const Login = () => {
         if (error.status === 401) {
           alert("Credenciales incorrectas")
         }
+
+        if(error.status === 404){
+          alert("Credenciales incorrectas o usuario no encontrado")
+        }
+
         if (error.code === 'ERR_NETWORK') {
           alert("Error de red. Por favor, verifica que el servidor esté en funcionamiento.")
         }
